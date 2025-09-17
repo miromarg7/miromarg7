@@ -237,7 +237,7 @@
         message: form.message.value,
       };
 
-      const response = await fetch("https://resilient-florentine-f58ff9.netlify.app/.netlify/functions/send-email", {
+      const response = await fetch("https://resilient-florentine-f58ff9.netlify.app/netlify/functions/send-email.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -253,4 +253,5 @@
 </script>
 
 </body>
+
 </html>
