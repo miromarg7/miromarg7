@@ -226,32 +226,40 @@
             });
         }
     </script>
-    <script>
-      document.querySelector(".contact1-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
+    <!-- Подключение EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  (function(){
+    // вставь свой Public Key
+    emailjs.init("ВАШ_PUBLIC_KEY");  
+  })();
 
-      const form = e.target;
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
-      };
+  function sendEmail(e) {
+    e.preventDefault();
 
-      const response = await fetch("https://resilient-florentine-f58ff9.netlify.app/netlify/functions/send-email.js", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-  if (response.ok) {
-    alert("Сообщение отправлено! ✅");
-    form.reset();
-  } else {
-    alert("Ошибка при отправке ❌");
+    emailjs.send("service_s9il6bo", "template_vvap5d9", {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    }).then(() => {
+      alert("Сообщение отправлено!");
+      document.getElementById("contactForm").reset();
+    }, (err) => {
+      alert("Ошибка: " + JSON.stringify(err));
+    });
   }
-});
 </script>
+
+<!-- Форма -->
+<form id="contactForm" onsubmit="sendEmail(event)">
+  <input id="name" type="text" placeholder="Имя" required>
+  <input id="email" type="email" placeholder="Email" required>
+  <textarea id="message" placeholder="Сообщение" required></textarea>
+  <button type="submit">Отправить</button>
+</form>
+
 
 </body>
 
 </html>
+
