@@ -166,10 +166,10 @@
         from_email: document.getElementById("email").value,
         message: document.getElementById("message").value
       }).then(() => {
-        alert("Сообщение отправлено!");
+        alert("Message sent!");
         document.getElementById("contactForm").reset();
       }, (err) => {
-        alert("Ошибка: " + JSON.stringify(err));
+        alert("Error: " + JSON.stringify(err));
       });
     }
 </script>
@@ -250,4 +250,5 @@
     </script>
 </body>
 </html>
+
 
