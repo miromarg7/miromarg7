@@ -321,7 +321,7 @@ z-index:0;
 
 .faq__grad--bottom {
   bottom: 0;
-  top: 460px;
+  top: 480px;
 }
 
 .faq__content {
@@ -671,4 +671,5 @@ textarea.input1 + .shadow-input1 {
   line-height: 1.4;
   max-width: 1000px;
   text-shadow: 0 2px 8px #000;
+
 }
