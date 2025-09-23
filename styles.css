@@ -977,18 +977,4 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
-@media (min-width: 1366px) and (max-width: 2533px) {
-  .hero-text p {
-    font-size: 32px;
-  }
-  .hero-text {
-    top: 290px;
-  }
 
-  .highlight {
-    font-size: 48px;
-  }
-  .me {
-    top: -50px;
-  }
-}
