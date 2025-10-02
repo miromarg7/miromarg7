@@ -980,5 +980,7 @@ textarea.input1 + .shadow-input1 {
 @media (max-width: 430px) {
   .highlight {
     font-size: 0.9rem !important;
+	  top: -10px !important;
   }
 }
+
