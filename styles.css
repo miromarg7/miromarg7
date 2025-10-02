@@ -976,3 +976,9 @@ textarea.input1 + .shadow-input1 {
     height: 280px;
   }
 }
+
+@media (max-width: 430px) {
+  .highlight {
+    font-size: 0.9rem !important;
+  }
+}
